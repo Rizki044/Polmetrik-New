@@ -15,6 +15,7 @@ describe('Login Functionality', () => {
     cy.get(button).click()
     cy.get(message).should('contain.text','Invalid credentials')
     cy.wait(1000)
+    cy.screenshot()
 })
 
 it('Verify Failed Login Without email address', () => {
@@ -23,6 +24,7 @@ it('Verify Failed Login Without email address', () => {
   cy.get(button).click()
   cy.get('.css-1u4yi1p').should('contain.text','Username/Email harus diisi')
   cy.wait(1000)
+  cy.screenshot()
 })
 
 it('Verify Failed Login Without password', () => {
@@ -31,6 +33,7 @@ it('Verify Failed Login Without password', () => {
   cy.get(button).click()
   cy.get('.css-1u4yi1p').should('contain.text','Kata Sandi harus diisi')
   cy.wait(1000)
+  cy.screenshot()
 })
 
 it('Verify Failed Login Wrong Password', () => {
@@ -41,6 +44,7 @@ it('Verify Failed Login Wrong Password', () => {
   cy.get(button).click()
   cy.get('.css-1u4yi1p').should('contain.text','Invalid credentials')
   cy.wait(1000)
+  cy.screenshot()
 })
 
 it('Verify Success Login', () => {
@@ -50,5 +54,6 @@ it('Verify Success Login', () => {
   cy.wait(1000)
   cy.get(button).click()
   cy.get('.css-6ct1tc > .MuiTypography-root', {timeout:30000}).contains('Dashboard');
+  cy.screenshot()
   });
 })
