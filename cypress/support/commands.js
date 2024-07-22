@@ -10,7 +10,18 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+const username = ".css-1wpyscx";
+const password = ".css-7lq7et";
+const button = ".css-1ce0nau";
+Cypress.Commands.add("login", () => {
+    cy.visit("https://app.polmetrik.id/");
+    cy.get(username).type("produkumum");
+    cy.get(password).type("polmetrik2024");
+    cy.get(button).click();
+
+  cy.get(".css-6ct1tc > .MuiTypography-root", { timeout: 30000 }).contains("Dashboard");
+});
+    
 //
 //
 // -- This is a child command --
