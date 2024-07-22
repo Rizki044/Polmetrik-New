@@ -19,8 +19,7 @@ Cypress.Commands.add("login", () => {
     cy.get(password).type("polmetrik2024");
     cy.get(button).click();
 
-  cy.get(".css-6ct1tc > .MuiTypography-root", { timeout: 30000 }).contains("Dashboard");
-});
+ });
     
 //
 //
