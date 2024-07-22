@@ -13,7 +13,7 @@ describe('Login Functionality', () => {
     cy.get(password).type('Tina2024')
     cy.wait(1000)
     cy.get(button).click()
-    cy.get(message).should('be.visible')
+    cy.get(message).should('contain.text','Invalid credentials')
     cy.wait(1000)
 })
 
@@ -21,7 +21,7 @@ it('Verify Failed Login Without email address', () => {
   cy.get('.css-7lq7et').type('Tina2024')
   cy.wait(1000)
   cy.get(button).click()
-  cy.get('.css-1u4yi1p').should('be.visible')
+  cy.get('.css-1u4yi1p').should('contain.text','Username/Email harus diisi')
   cy.wait(1000)
 })
 
@@ -29,7 +29,7 @@ it('Verify Failed Login Without password', () => {
   cy.get(username).type('wakidah@binokular.net')
   cy.wait(1000)
   cy.get(button).click()
-  cy.get('.css-1u4yi1p').should('be.visible')
+  cy.get('.css-1u4yi1p').should('contain.text','Kata Sandi harus diisi')
   cy.wait(1000)
 })
 
@@ -39,7 +39,7 @@ it('Verify Failed Login Wrong Password', () => {
   cy.get(password).type('tina2024')
   cy.wait(1000)
   cy.get(button).click()
-  cy.get('.css-1u4yi1p').should('be.visible')
+  cy.get('.css-1u4yi1p').should('contain.text','Invalid credentials')
   cy.wait(1000)
 })
 
