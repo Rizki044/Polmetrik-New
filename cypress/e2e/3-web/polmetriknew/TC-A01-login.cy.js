@@ -53,7 +53,7 @@ it('Verify Success Login', () => {
   cy.get(password).type('polmetrik2024')
   cy.wait(1000)
   cy.get(button).click()
-  cy.get('.css-6ct1tc > .MuiTypography-root', {timeout:30000}).contains('Dashboard');
   cy.screenshot()
-  });
+  cy.get('.css-6ct1tc > .MuiTypography-root', {timeout:30000}).contains('Dashboard');
+    });
 })
